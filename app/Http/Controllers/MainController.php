@@ -6,11 +6,18 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function home() {
+    public function home()
+    {
         return view('home');
     }
 
-    public function about() {
+    public function about()
+    {
         return view('about');
+    }
+
+    public function review()
+    {
+        return view('review');
     }
 }
