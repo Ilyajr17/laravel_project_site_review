@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ReviewModel;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -10,7 +11,7 @@ class MainController extends Controller
     {
         return view('home');
     }
-rev
+
     public function about()
     {
         return view('about');
@@ -28,5 +29,17 @@ rev
             'name' => 'required|min:4|max:100',
             'review' => 'required|min:|max:200'
         ]);  
+
+        $review = new ReviewModel();
+        $review->email = $request->input('email');
+        $review->name = $request->input('name');
+        $review->review = $request->input('review');
+
+        
+
+        $review->save();
+
+       
+        return redirect('review');
     }
 }
