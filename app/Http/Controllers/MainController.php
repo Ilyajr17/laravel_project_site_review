@@ -10,13 +10,13 @@ class MainController extends Controller
     {
         return view('home');
     }
-
+rev
     public function about()
     {
         return view('about');
     }
 
-    public function review(Request $request)
+    public function review()
     {
         return view('review');
     }
